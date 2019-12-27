@@ -1,0 +1,16 @@
+./conf.d: Locate MySQL config file named xxx.cnf.
+docker-entrypoint-initdb.d: Locate files with extensions .sh, .sql, .sql.gz, these will be executed during building process in alphabetical order.
+
+Build image by executing following command.
+$ sudo docker build -t "your repository/image name:tag" 
+
+Run container by executing following commnad.
+$ sudo docker run -d --name "your container name" -e MYSQL_ROOT_PASSWORD="your mysql root password" repository/imagename:tag
+
+or 
+
+$ sudo docker run -d --name "your container name" -e MYSQL_ALLOW_EMPTY_PASSWORD="yes" repository/imagename:tag
+
+or 
+
+$ sudo docker run -d --name "your container name" -e MYSQL_RANDOM_ROOT_PASSWORD="yes" repository/imagename:tag
